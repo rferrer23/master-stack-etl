@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity StackOverFlowApiClient.
+    -->
+    <changeSet id="20181017184231-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="stack_over_flow_api_clients_id"
+                                 baseTableName="stack_over_flow_api_client_extra"
+                                 constraintName="stack_over_flow_api_client_extr_stack_over_flow_api_clients_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stack_over_flow_api_client"/>
+        <addForeignKeyConstraint baseColumnNames="extras_id"
+                                 baseTableName="stack_over_flow_api_client_extra"
+                                 constraintName="fk_stack_over_flow_api_client_extra_extras_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="extra"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,23 @@
+
+{
+    "etlBigdataApp": {
+        "extra" : {
+            "home": {
+                "title": "Extras",
+                "createLabel": "สร้าง Extra",
+                "createOrEditLabel": "สร้างหรือแก้ไข Extra"
+            },
+            "created": "Extra ถูกสร้างด้วย {{ param }}",
+            "updated": "Extra ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Extra ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Extra {{ id }}?"
+            },
+            "detail": {
+                "title": "Extra"
+            },
+            "key": "Key",
+            "value": "Value"
+        }
+    }
+}

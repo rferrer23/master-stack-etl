@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "key",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "2000"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20181017184500",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "extra",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

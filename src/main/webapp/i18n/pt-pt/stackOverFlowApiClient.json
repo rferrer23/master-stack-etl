@@ -1,0 +1,29 @@
+
+{
+    "etlBigdataApp": {
+        "stackOverFlowApiClient" : {
+            "home": {
+                "title": "Stack Over Flow Api Clients",
+                "createLabel": "Criar um(a) novo(a) Stack Over Flow Api Client",
+                "createOrEditLabel": "Criar ou editar um(a) Stack Over Flow Api Client"
+            },
+            "created": "A new Stack Over Flow Api Client is created with identifier {{ param }}",
+            "updated": "A Stack Over Flow Api Client is updated with identifier {{ param }}",
+            "deleted": "A Stack Over Flow Api Client is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Stack Over Flow Api Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Stack Over Flow Api Client"
+            },
+            "users": "Users",
+            "firstPeriod": "First Period",
+            "lastPeriod": "Last Period",
+            "tags": "Tags",
+            "nextSendTime": "Next Send Time",
+            "active": "Active",
+            "secret": "Secret",
+            "extra": "Extra"
+        }
+    }
+}

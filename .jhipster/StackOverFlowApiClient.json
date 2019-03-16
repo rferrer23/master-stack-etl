@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "extra",
+            "otherEntityName": "extra",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "stackOverFlowApiClient"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "users",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20000"
+        },
+        {
+            "fieldName": "firstPeriod",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastPeriod",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "tags",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "10000"
+        },
+        {
+            "fieldName": "nextSendTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "secret",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20181017184231",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "stack_over_flow_api_client",
+    "jpaMetamodelFiltering": true,
+    "pagination": "infinite-scroll"
+}

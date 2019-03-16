@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-stack-over-flow-api-client-heading" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.home.createOrEditLabel">Create or edit a Stack Over Flow Api Client</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!stackOverFlowApiClient.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="stackOverFlowApiClient.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.users" for="field_users">Users</label>
+                    <input type="text" class="form-control" name="users" id="field_users"
+                        [(ngModel)]="stackOverFlowApiClient.users" maxlength="20000"/>
+                    <div [hidden]="!(editForm.controls.users?.dirty && editForm.controls.users?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.users?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20000 }">
+                        This field cannot be longer than 20000 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.firstPeriod" for="field_firstPeriod">First Period</label>
+                    <div class="input-group">
+                        <input id="field_firstPeriod" type="text" class="form-control" name="firstPeriod" ngbDatepicker  #firstPeriodDp="ngbDatepicker" [(ngModel)]="stackOverFlowApiClient.firstPeriod"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="firstPeriodDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.lastPeriod" for="field_lastPeriod">Last Period</label>
+                    <div class="input-group">
+                        <input id="field_lastPeriod" type="text" class="form-control" name="lastPeriod" ngbDatepicker  #lastPeriodDp="ngbDatepicker" [(ngModel)]="stackOverFlowApiClient.lastPeriod"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="lastPeriodDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.tags" for="field_tags">Tags</label>
+                    <input type="text" class="form-control" name="tags" id="field_tags"
+                        [(ngModel)]="stackOverFlowApiClient.tags" maxlength="10000"/>
+                    <div [hidden]="!(editForm.controls.tags?.dirty && editForm.controls.tags?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tags?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10000 }">
+                        This field cannot be longer than 10000 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.nextSendTime" for="field_nextSendTime">Next Send Time</label>
+                    <div class="input-group">
+                        <input id="field_nextSendTime" type="text" class="form-control" name="nextSendTime" ngbDatepicker  #nextSendTimeDp="ngbDatepicker" [(ngModel)]="stackOverFlowApiClient.nextSendTime"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="nextSendTimeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                        [(ngModel)]="stackOverFlowApiClient.active" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="etlBigdataApp.stackOverFlowApiClient.secret" for="field_secret">Secret</label>
+                    <input type="text" class="form-control" name="secret" id="field_secret"
+                        [(ngModel)]="stackOverFlowApiClient.secret" />
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="etlBigdataApp.stackOverFlowApiClient.extra" for="field_extra">Extra</label>
+                    <select class="form-control" id="field_extra" multiple name="extra" [(ngModel)]="stackOverFlowApiClient.extras">
+                        <option [ngValue]="getSelected(stackOverFlowApiClient.extras, extraOption)" *ngFor="let extraOption of extras; trackBy: trackExtraById">{{extraOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

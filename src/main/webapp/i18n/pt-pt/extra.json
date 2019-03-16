@@ -1,0 +1,23 @@
+
+{
+    "etlBigdataApp": {
+        "extra" : {
+            "home": {
+                "title": "Extras",
+                "createLabel": "Criar um(a) novo(a) Extra",
+                "createOrEditLabel": "Criar ou editar um(a) Extra"
+            },
+            "created": "A new Extra is created with identifier {{ param }}",
+            "updated": "A Extra is updated with identifier {{ param }}",
+            "deleted": "A Extra is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Extra {{ id }}?"
+            },
+            "detail": {
+                "title": "Extra"
+            },
+            "key": "Key",
+            "value": "Value"
+        }
+    }
+}

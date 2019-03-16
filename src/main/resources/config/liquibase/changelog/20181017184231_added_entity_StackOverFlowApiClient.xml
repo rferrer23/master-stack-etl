@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity StackOverFlowApiClient.
+    -->
+    <changeSet id="20181017184231-1" author="jhipster">
+        <createTable tableName="stack_over_flow_api_client">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="users" type="varchar(20000)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="first_period" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="last_period" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tags" type="varchar(10000)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="next_send_time" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="active" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="secret" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="stack_over_flow_api_client_extra">
+            <column name="extras_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="stack_over_flow_api_clients_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="stack_over_flow_api_clients_id, extras_id" tableName="stack_over_flow_api_client_extra"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

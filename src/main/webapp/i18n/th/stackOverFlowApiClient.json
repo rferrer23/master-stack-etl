@@ -1,0 +1,29 @@
+
+{
+    "etlBigdataApp": {
+        "stackOverFlowApiClient" : {
+            "home": {
+                "title": "Stack Over Flow Api Clients",
+                "createLabel": "สร้าง Stack Over Flow Api Client",
+                "createOrEditLabel": "สร้างหรือแก้ไข Stack Over Flow Api Client"
+            },
+            "created": "Stack Over Flow Api Client ถูกสร้างด้วย {{ param }}",
+            "updated": "Stack Over Flow Api Client ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Stack Over Flow Api Client ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Stack Over Flow Api Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Stack Over Flow Api Client"
+            },
+            "users": "Users",
+            "firstPeriod": "First Period",
+            "lastPeriod": "Last Period",
+            "tags": "Tags",
+            "nextSendTime": "Next Send Time",
+            "active": "Active",
+            "secret": "Secret",
+            "extra": "Extra"
+        }
+    }
+}

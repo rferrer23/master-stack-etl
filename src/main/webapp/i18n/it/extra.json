@@ -1,0 +1,23 @@
+
+{
+    "etlBigdataApp": {
+        "extra" : {
+            "home": {
+                "title": "Extras",
+                "createLabel": "Genera un nuovo Extra",
+                "createOrEditLabel": "Genera o modifica un Extra"
+            },
+            "created": "&Egrave; stato generato un nuovo Extra con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Extra identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Extra con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Extra {{ id }}?"
+            },
+            "detail": {
+                "title": "Extra"
+            },
+            "key": "Key",
+            "value": "Value"
+        }
+    }
+}

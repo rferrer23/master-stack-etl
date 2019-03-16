@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stackOverFlowApiClient">
+            <h2><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.detail.title">Stack Over Flow Api Client</span> {{stackOverFlowApiClient.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.users">Users</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.users}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.firstPeriod">First Period</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.firstPeriod}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.lastPeriod">Last Period</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.lastPeriod}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.tags">Tags</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.tags}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.nextSendTime">Next Send Time</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.nextSendTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.active">Active</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.secret">Secret</span></dt>
+                <dd>
+                    <span>{{stackOverFlowApiClient.secret}}</span>
+                </dd>
+                <dt><span jhiTranslate="etlBigdataApp.stackOverFlowApiClient.extra">Extra</span></dt>
+                <dd>
+                    <span *ngFor="let extra of stackOverFlowApiClient.extras; let last = last">
+                        <a [routerLink]="['/extra', extra?.id, 'view' ]">{{extra.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stack-over-flow-api-client', stackOverFlowApiClient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
